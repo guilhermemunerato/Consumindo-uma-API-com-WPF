@@ -1,0 +1,30 @@
+﻿<Window x:Class="DesafioSTI3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesafioSTI3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="490" Width="996" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,8">
+        <Button x:Name="BtnCarregarDados" Content="Carregar Dados" HorizontalAlignment="Center" Margin="0,408,0,0" VerticalAlignment="Top" Height="27" Width="204" Click="BtnCarregarDados_Click"/>
+        <TabControl HorizontalAlignment="Center" Height="382" Margin="0,10,0,0" VerticalAlignment="Top" Width="976">
+            <TabItem Header="Pedidos">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="DbgDados" HorizontalAlignment="Center" Height="334" VerticalAlignment="Center" Width="950" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Pedido" Binding="{Binding Numero}" Width="50"/>
+                            <DataGridTextColumn Header="Data" Binding="{Binding DataCriacao}" Width="200"/>
+                            <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente.Nome}" Width="430"/>
+                            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="100"/>
+                            <DataGridTextColumn Header="ValorTotal" Binding="{Binding ValorTotal}" Width="120"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Relatórios">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
